@@ -43,12 +43,16 @@ function applyRule() {
   for (let i = 0; i < sentence.length; i++) {
     let current = sentence.charAt(i);
     let rkeys = Object.keys(rules);
+    let found = false;
     for (let j = 0; j < rkeys.length; j++) {
       if (current === rkeys[j]) {
         newSentence += rules[rkeys[j]];
-      }else{
-        newSentence+=current // if not in rules add that character
+        found = true
       }
+    }
+    //
+    if (!found){
+      newSentence+=current
     }
   }
   sentence = newSentence;
