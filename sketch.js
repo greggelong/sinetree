@@ -45,12 +45,13 @@ function applyRule() {
     let rkeys = Object.keys(rules);
     let found = false;
     for (let j = 0; j < rkeys.length; j++) {
+      // if current is in the rule set make that substitution
       if (current === rkeys[j]) {
         newSentence += rules[rkeys[j]];
         found = true
       }
     }
-    //
+    // if that current is not one of the rules append it to the new sentence
     if (!found){
       newSentence+=current
     }
